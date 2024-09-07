@@ -1,0 +1,22 @@
+name: Review Assign
+
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set REVIEWERS
+        run: |
+          PR_AUTHOR=${{ github.actor }}
+          ALL_MEMBERS="h-beeen enjoy89 ehhahappy suubinkim hyeonjong-kim"
+          REVIEWERS=$(echo $ALL_MEMBERS | sed "s/$PR_AUTHOR//g" | xargs)
+          echo "REVIEWERS=$REVIEWERS" >> $GITHUB_ENV
+      - uses: hkusu/review-assign-action@v1
+        with:
+          assignees: ${{ github.actor }}
+          reviewers: ${{ env.REVIEWERS }}
+          ready-comment: '스터디 리뷰 대기 중 입니다 🙆 <reviewers>'
+          merged-comment: '성공적으로 Merge 되었습니다. Reviewed By <reviewers> :wink:'
