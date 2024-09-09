@@ -3,14 +3,16 @@
 > **대부분 상황에서는 원소가 하나뿐인 열거 타입이 싱글턴을 만드는 가장 좋은 방법이다.**
 - [싱글턴(singleton)](#싱글턴singleton)
 - [싱글턴을 만드는 방식](#싱글턴을-만드는-방식)
-  - [1. public static 멤버가 final 필드인 방식](#1-public-static--final--)
-  - [2. 정적 팩터리 메서드를 public static 멤버로 제공하는 방식](#2----public-static---)
+  - [1. public static 멤버가 final 필드인 방식](#1-public-static-멤버가-final-필드인-방식)
+  - [2. 정적 팩터리 메서드를 public static 멤버로 제공하는 방식](#2-정적-팩터리-메서드를-public-static-멤버로-제공하는-방식)
   - [위 두 방식의 문제점](#위-두-방식의-문제점)
-  - [3. 원소가 하나인 열거 타입을 선언하는 방식](#3------)
+  - [3. 원소가 하나인 열거 타입을 선언하는 방식](#3-원소가-하나인-열거-타입을-선언하는-방식)
 
 <br/>
 
 ## 싱글턴(singleton)
+
+
 : 인스턴스를 오직 하나만 생성할 수 있는 클래스
 
 - 장점
@@ -23,8 +25,12 @@
   - 싱글톤의 사용은 전역 상태를 만들 수 있기 때문에 바람직하지 못하다.
 
 ## 싱글턴을 만드는 방식
+
 ### 1. public static 멤버가 final 필드인 방식
+
+
 : 생성자는 private으로 감춰두고, 유일한 인스턴스에 접근할 수 있는 수단으로 public static 멤버를 하나 마련해둔다.
+
 ```java
 public class Elvis {
     public static final Elvis INSTANCE = new Elvis();
@@ -33,8 +39,9 @@ public class Elvis {
     public void leaveTheBuilding() { }
 }
  ```
+
 - 장점
-  - 해당 클래스가 싱글텀임이 API에 명백히 드러난다.
+  - 해당 클래스가 싱글턴임이 API에 명백히 드러난다.
   - 간결하다.
 - 예외
   - AccessibleObject.setAccessible을 사용해 private 생성자를 호출할 수 있다.
