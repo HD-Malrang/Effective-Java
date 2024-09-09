@@ -8,7 +8,7 @@
   - static 유틸리티를 잘못 사용한 예
     ```java
     public class SpellChecker {
-        private static final Lexicon dictionary = ...; // 의존하는 리소스 (의존성)
+        private static final Lexicon dictionary; // 의존하는 리소스 (의존성)
         private SpellChecker() {} // 객체 생성 방지
         
         public static boolean isValid(String word) { }
