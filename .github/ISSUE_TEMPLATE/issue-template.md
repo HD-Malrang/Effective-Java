@@ -1,3 +1,12 @@
+---
+name: Issue Template
+about: Issue Template
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 ## ✨ 관련 PR
 - closed #<PR 번호>
 
