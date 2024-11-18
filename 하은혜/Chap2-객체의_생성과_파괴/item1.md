@@ -379,7 +379,7 @@
    ```
 
   - 자바독 생성 시, 생성자는 생성자의 영역이 따로 존재하여 인스턴스를 어떻게 생성할 수 있는 지를 한 눈에 볼 수 있는 반면 정적 팩토리 매서드는 메서드 부분에 들어가 있어 해당 클래스에서 제공하는 메서드가 많아지는 경우 인스턴스를 생성해주는 용도의 메서드를 찾기가 어렵게 될수도 있다.
-    ![image.png](image/javadoc_settings.png)
+    ![image.png](../image/javadoc_settings.png)
 
   - 이에 책에서는 네이밍 패턴을 사용하여 알아보기 쉽게 하는 것과 문서화를 제안하고 있다. 문서화의 예시는 아래와 같다.
      ```java
@@ -405,4 +405,4 @@
          
      }
      ```
-    ![image.png](image/javadoc_settings2.png)
+    ![image.png](../image/javadoc_settings2.png)
